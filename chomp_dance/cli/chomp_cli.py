@@ -1,5 +1,7 @@
 # is argparse standard?
 import argparse
+from chomp_dance.muncher import Muncher
+from chomp_dance.network.utils import find_latest_version
 
 # thanks, tutorial!
 parser = argparse.ArgumentParser()
@@ -16,6 +18,14 @@ filename = args.parse
 # check if add argument has any input data.
 # If it has, then print sum of the given numbers
 if len(args.parse) != 0:
-	print("ok we start fun now ", filename)
-#	parse_file(filename)
-	
+	deps = Muncher.parse_file(filename)
+	print("size?", deps.__len__())
+
+# how the hell else do you do this?
+while deps.__len__() > 0:
+	dep = deps.pop()
+	if dep is None:
+		break
+	version_string = find_latest_version(dep)
+	print("ugh version", version_string)
+# MOAR COMMENTS BECAUSE I AM NOT A FAN OF INDENTATION
