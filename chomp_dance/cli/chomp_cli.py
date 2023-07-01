@@ -28,4 +28,6 @@ while deps.__len__() > 0:
 		break
 	version_string = find_latest_version(dep)
 	print("ugh version", version_string)
+
+
 # MOAR COMMENTS BECAUSE I AM NOT A FAN OF INDENTATION

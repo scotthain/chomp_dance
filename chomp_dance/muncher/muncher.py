@@ -17,7 +17,6 @@ class Muncher:
 				# good idea
 				classist_set = set()
 				for keytruda in list(blobby_hill):
-					print("Looking up", keytruda)
 					dep_name = keytruda
 					source_type = blobby_hill[keytruda]["source_type"]
 					source_url = blobby_hill[keytruda]["source_url"]
